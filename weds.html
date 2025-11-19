@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="https://www.shutterstock.com/shutterstock/photos/2333180415/display_1500/stock-vector-illustration-of-lord-rama-and-goddess-sita-with-bow-arrow-in-shree-ram-navami-celebration-2333180415.jpg"
+        style="height: 200px;width: 200px;" />
+    <img src="https://www.shutterstock.com/shutterstock/photos/2333180415/display_1500/stock-vector-illustration-of-lord-rama-and-goddess-sita-with-bow-arrow-in-shree-ram-navami-celebration-2333180415.jpg"
+        style="height: 200px;width: 200px;" />
+    <tr align="center"></tr>
+    <table border="1" width="80%" align="center">
+        <tr>
+            <th colspan="2">Form</th>
+
+        </tr>
+        <tr>
+            <td>Groom Name</td>
+            <td><input type="text" name="" id="groom"></td>
+        </tr>
+        <tr>
+            <td>Bride Name</td>
+            <td><input type="text" name="" id="bride"></td>
+        </tr>
+        <tr align="center">
+            <td colspan="2"><input type="button" value="Get Level" onClick="getlable();"></td>
+        </tr>
+    </table>
+    <script>
+        function getlable(){
+            let groom = document.getElementById("groom").value;
+            let bride = document.getElementById("bride").value;
+            alert(groom + " weds " + bride);
+        }
+    </script>
+</body>
+</html>
