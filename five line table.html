@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+    
+    <img src="https://www.w3schools.com/css/img_5terre.jpg"
+    style="height: 200px;width: 200px;"/>
+    <img src="https://www.w3schools.com/css/img_lights.jpg"
+    style="height: 200px;width: 200px;"/>
+    <a href="https://www.instagram.com/" style="color: blueviolet;">click to get my instagram</a>
+
+    <table border="1" width="50%" align="center">
+        <tr>
+            <td>second</td>
+            <td><input type="text" name="" id="first"></td>
+        </tr>
+        <tr>
+            <td>Second Num</td>
+            <td><input type="text" name="" id="second"></td>
+        </tr>
+        <tr>
+            <td>third Num</td>
+            <td><input type="text" name="" id="third"></td>
+         </tr>
+            <tr>
+                 <td>forth Num</td>
+            <td><input type="text" name="" id="forth"></td>
+            </tr>
+            <tr>
+                 <td>five Num</td>
+            <td><input type="text" name="" id="five"></td>
+            </tr>
+            <tr>
+            <td colspan="2" align="center">
+                <input type="button" value="add" onclick="add();" style="background-color: rgb(0, 255, 98); color: rgb(255, 255, 255);">
+            </td>
+        </tr>
+        </table>
+        <script>
+            function add(){
+                let first = document.getElementById("first").value;
+                let second = document.getElementById("second").value;
+                let third = document.getElementById("third").value;
+                let forth = document.getElementById("forth").value;
+                let five = document.getElementById("five").value;
+
+
+                let add = parseInt(first) + parseInt(second) + parseInt(third) + parseInt(forth) + parseInt(five)
+                    
+                    alert(add);
+            }
+            </script>
+              <!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>HTML Table</h2>
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Digital Services</td>
+    <td>9504642485</td>
+    <td>india</td>
+  </tr>
+  <tr>
+    <td>Adithya Wireless</td>
+    <td>9097330770</td>
+    <td>india</td>
+  </tr>
+  <tr>
+    <td>SN DIGITAL WORLD</td>
+    <td>8409110216</td>
+    <td>india</td>
+  </tr>
+  <tr>
+    <td>L K NIDHI</td>
+    <td>7739618571</td>
+    <td>india</td>
+  </tr>
+  <tr>
+    <td>Buddha Iti</td>
+    <td>9801697701</td>
+    <td>india</td>
+  </tr>
+  <tr>
+    <td>RSTTC GAYA</td>
+    <td>9431297239</td>
+    <td>india</td>
+  </tr>
+</table>
+
+</body>
+</html>
