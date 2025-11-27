@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome To A.M College Gaya – Official Landing Page</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #36aedd;
+            scroll-behavior: smooth;
+        }
+
+        /* Header/Navbar */
+        header {
+            background: #dfdedd;
+            color: rgb(143, 7, 7);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 600;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: auto;
+        }
+
+        nav .logo {
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        nav a {
+            color: rgb(221, 68, 126);
+            margin-left: 25px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #f1c40f;
+        }
+
+        /* Hero Section */
+        
+
+        .hero h1 {
+            font-size: 55px;
+        }
+
+        .hero p {
+            font-size: 20px;
+        }
+
+        .hero button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            background: #f1c40f;
+            color: black;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .hero button:hover {
+            background: #d4ac0d;
+        }
+
+        /* About Section */
+        #about {
+            padding: 50px;
+            background: white;
+            text-align: center;
+        }
+
+        #about h2 {
+            font-size: 32px;
+            color: #1b2a49;
+        }
+
+        #about p {
+            width: 80%;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* Courses Section */
+        #courses {
+            padding: 50px;
+            background: #ecf0f1;
+        }
+
+        #courses h2 {
+            text-align: center;
+            font-size: 32px;
+            color: #1b2a49;
+        }
+
+        .course-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .course {
+            background: white;
+            width: 270px;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+
+        .course h3 {
+            color: #1b2a49;
+        }
+
+        /* Gallery Section */
+        #gallery {
+            padding: 50px;
+            background: white;
+        }
+
+        #gallery h2 {
+            text-align: center;
+            font-size: 32px;
+            color: #1b2a49;
+        }
+
+        .gallery-box {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .gallery-box img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.2);
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 50px;
+            background: #ecf0f1;
+        }
+
+        #contact h2 {
+            text-align: center;
+            font-size: 32px;
+            color: #1b2a49;
+        }
+
+        .contact-info {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background: #1b2a49;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 35px; }
+            nav a { margin-left: 15px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header/Navbar -->
+    <header>
+        <nav>
+            <div class="logo">A.M. College</div>
+            <div>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#courses">Courses</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Welcome To A.M College Gaya</h1>
+        <p>Gaya, Bihar</p>
+        <button onclick="window.location='#contact'">Contact Us</button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About The College</h2>
+        <p>
+            Anugrah Memorial College (A.M. College), Gaya, बिहार का एक प्रतिष्ठित शिक्षण संस्थान है  
+            जो अपने गुणवत्तापूर्ण शिक्षा, अनुभवी फैकल्टी, और उत्कृष्ट शैक्षणिक माहौल के लिए जाना जाता है।  
+            यह कॉलेज Undergraduate से लेकर Postgraduate तक विभिन्न Courses प्रदान करता है।  
+        </p>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses">
+        <h2>Available Courses</h2>
+        <div class="course-list">
+
+            <div class="course">
+                <h3>B.A. Program</h3>
+                <p>Hindi, English, History, Geography, Political Science आदि।</p>
+            </div>
+
+            <div class="course">
+                <h3>B.Sc. Program</h3>
+                <p>Physics, Chemistry, Botany, Zoology, Mathematics।</p>
+            </div>
+
+            <div class="course">
+                <h3>B.Com Program</h3>
+                <p>Accountancy, Finance, Management, Economics।</p>
+            </div>
+
+            <div class="course">
+                <h3>Post Graduate Courses</h3>
+                <p>विभिन्न विषयों में उच्च शिक्षा उपलब्ध।</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2>Campus Gallery</h2>
+        <div class="gallery-box">
+            <img src="https://amcollegegaya.ac.in/upload/images/1682871688DSC_4244.JPG" alt="Campus Image">
+            <img src="https://amcollegegaya.ac.in/upload/images/16087302261608723382525.jpg" alt="Campus Image">
+            <img src="https://amcollegegaya.ac.in/upload/images/162584969616186524301.jpg" alt="Campus Image">
+            <img src="https://amcollegegaya.ac.in/upload/images/160255036515768406811-3.jpg" alt="Campus Image">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Information</h2>
+        <div class="contact-info">
+    📍 **Address:** Anugrah Memorial College, Gaya, Bihar  
+     📞 **Phone:** +91-8409110216  
+    ✉️ **Email:-sndigitalworld20@gmail.com 
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        © 2025 Anugrah Memorial College – All Rights Reserved
+    </footer>
+
+</body>
+</html>
