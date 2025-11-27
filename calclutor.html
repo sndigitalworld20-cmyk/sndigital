@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanilla JS Calculator</title>
+    <style>
+        body {
+    background: #1e1e1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.calculator {
+    background: #222;
+    padding: 20px;
+    border-radius: 12px;
+    width: 260px;
+    box-shadow: 0 0 20px #0008;
+}
+
+#display {
+    width: 100%;
+    height: 60px;
+    font-size: 28px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    text-align: right;
+    background: #333;
+    color: #fff;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn {
+    background: #444;
+    color: white;
+}
+
+.op {
+    background: #ff9500;
+}
+
+.equals {
+    background: #28a745;
+    grid-column: span 1;
+    color: white;
+}
+
+.clear {
+    background: #dc3545;
+    grid-column: span 2;
+}
+
+.delete {
+    background: #6c757d;
+    grid-column: span 2;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <input type="text" id="display" disabled />
+
+        <div class="buttons">
+            <button class="btn" data-val="7">7</button>
+            <button class="btn" data-val="8">8</button>
+            <button class="btn" data-val="9">9</button>
+            <button class="btn op" data-val="/">÷</button>
+
+            <button class="btn" data-val="4">4</button>
+            <button class="btn" data-val="5">5</button>
+            <button class="btn" data-val="6">6</button>
+            <button class="btn op" data-val="*">×</button>
+
+            <button class="btn" data-val="1">1</button>
+            <button class="btn" data-val="2">2</button>
+            <button class="btn" data-val="3">3</button>
+            <button class="btn op" data-val="-">−</button>
+
+            <button class="btn" data-val="0">0</button>
+            <button class="btn" data-val=".">.</button>
+            <button class="btn op" data-val="+">+</button>
+            <button class="btn equals">=</button>
+
+            <button class="btn clear">C</button>
+            <button class="btn delete">DEL</button>
+        </div>
+    </div>
+
+<script>
+    const display = document.getElementById("display");
+
+// Add numbers & operators
+document.querySelectorAll(".btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        display.value += btn.dataset.val;
+    });
+});
+
+// Clear button
+document.querySelector(".clear").addEventListener("click", () => {
+    display.value = "";
+});
+
+// Delete last character
+document.querySelector(".delete").addEventListener("click", () => {
+    display.value = display.value.slice(0, -1);
+});
+
+// Calculate result
+document.querySelector(".equals").addEventListener("click", () => {
+    try {
+        display.value = eval(display.value) || "";
+    } catch {
+        display.value = "Error";
+    }
+});
+
+</script>
+</body>
+</html>
