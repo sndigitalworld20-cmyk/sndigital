@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIG Hospital Hyderabad - World-Class Healthcare</title>
+    <!-- Google Fonts for professional typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        /* Color scheme: Blue (#007bff), White (#fff), Grey (#6c757d) */
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #545b62;
+        }
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #007bff;
+        }
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+        nav a {
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #007bff;
+        }
+        .cta-btn {
+            margin-left: 2rem;
+        }
+        /* Hero Section */
+        .hero {
+            background-image: url('https://source.unsplash.com/featured/?hospital,modern'); /* Placeholder image */
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .hero .buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        /* About Section */
+        .about {
+            padding: 4rem 2rem;
+            background-color: #fff;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #007bff;
+        }
+        .about p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        .about-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .icon-item {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+        .icon-item i {
+            font-size: 3rem;
+            color: #007bff;
+            margin-bottom: 1rem;
+        }
+        /* Specialties */
+        .specialties {
+            padding: 4rem 2rem;
+            background-color: #f9f9f9;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .specialties h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #007bff;
+        }
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .specialty-card {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .specialty-card:hover {
+            transform: translateY(-5px);
+        }
+        .specialty-card i {
+            font-size: 3rem;
+            color: #007bff;
+            margin-bottom: 1rem;
+        }
+        /* Doctors */
+        .doctors {
+            padding: 4rem 2rem;
+            background-color: #fff;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .doctors h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #007bff;
+        }
+        .doctors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .doctor-card {
+            background-color: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .doctor-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            background-color: #ddd; /* Placeholder */
+        }
+        /* Services */
+        .services {
+            padding: 4rem 2rem;
+            background-color: #f9f9f9;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #007bff;
+        }
+        .services ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .services li {
+            background-color: #fff;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        /* Testimonials */
+        .testimonials {
+            padding: 4rem 2rem;
+            background-color: #fff;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #007bff;
+        }
+        .testimonial-carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 2rem;
+            scroll-snap-type: x mandatory;
+        }
+        .testimonial-card {
+            background-color: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            min-width: 300px;
+            scroll-snap-align: start;
+        }
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+        }
+        .social-icons a {
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #007bff;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero .buttons {
+                flex-direction: column;
+            }
+            .about-icons {
+                flex-direction: column;
+            }
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">AIG Hospital Hyderabad</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>s
+                    <li><a href="#specialties">Specialties</a></li>
+                    <li><a href="#doctors">Doctors</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#patient-care">Patient Care</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="btn-primary cta-btn">Book Appointment</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>World-Class Healthcare in Hyderabad</h1>
+            <p>Compassion, Innovation, Excellence in Patient Care</p>
+            <div class="buttons">
+                <button class="btn-primary">Book Appointment</button>
+                <button class="btn-secondary">Find a Doctor</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About AIG Hospital Hyderabad</h2>
+        <p>AIG Hospital Hyderabad is committed to providing advanced medical care with cutting-edge technology and a team of expert doctors. We prioritize patient safety, comfort, and holistic healing in a compassionate environment.</p>
+        <div class="about-icons">
+            <div class="icon-item">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Trust</h3>
+            </div>
+            <div class="icon-item">
+                <i class="fas fa-user-md"></i>
+                <h3>Expertise</h3>
+            </div>
+            <div class="icon-item">
+                <i class="fas fa-clock"></i>
+                <h3>24/7 Emergency</h3>
+            </div>
+            <div class="icon-item">
+                <i class="fas fa-building"></i>
+                <h3>Modern Facilities</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Specialties -->
+    <section id="specialties" class="specialties">
+        <h2>Key Specialties</h2>
+        <div class="specialties-grid">
+            <div class="specialty-card">
+                <i class="fas fa-stomach"></i>
+                <h3>Gastroenterology</h3>
+                <p>Expert care for digestive health and disorders.</p>
+            </div>
+            <div class="specialty-card">
+                <i class="fas fa-heart"></i>
+                <h3>Cardiology</h3>
+                <p>Advanced treatments for heart conditions.</p>
+            </div>
+            <div class="specialty-card">
+                <i class="fas fa-ribbon"></i>
+                <h3>Oncology</h3>
+                <p>Comprehensive cancer care and therapies.</p>
+            </div>
+            <div class="specialty-card">
+                <i class="fas fa-brain"></i>
+                <h3>Neurology</h3>
+                <p>Specialized treatment for neurological issues.</p>
+            </div>
+            <div class="specialty-card">
+                <i class="fas fa-bone"></i>
+                <h3>Orthopedics</h3>
+                <p>Expert orthopedic surgeries and rehabilitation.</p>
+            </div>
+            <div class="specialty-card">
+                <i class="fas fa-ambulance"></i>
+                <h3>Emergency Medicine</h3>
+                <p>Rapid response and critical care services.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctor Highlights -->
+    <section id="doctors" class="doctors">
+        <h2>Meet Our Doctors</h2>
+        <div class="doctors-grid">
+            <div class="doctor-card">
+                <img src="https://via.placeholder.com/100" alt="Doctor Photo">
+                <h3>Dr. Rajesh Kumar</h3>
+                <p>Chief Cardiologist</p>
+                <p>Over 20 years of experience in cardiovascular surgery.</p>
+            </div>
+            <div class="doctor-card">
+                <img src="https://via.placeholder.com/100" alt="Doctor Photo">
+                <h3>Dr. Priya Sharma</h3>
+                <p>Oncologist</p>
+                <p>Specialist in cancer treatment and patient care.</p>
+            </div>
+            <div class="doctor-card">
+                <img src="https://via.placeholder.com/100" alt="Doctor Photo">
+                <h3>Dr. Anil Gupta</h3>
+                <p>Neurologist</p>
+                <p>Expert in neurological disorders and therapies.</p>
+            </div>
+            <div class="doctor-card">
+                <img src="https://via.placeholder.com/100" alt="Doctor Photo">
+                <h3>Dr. Meera Patel</h3>
+                <p>Orthopedic Surgeon</p>
+                <p>Skilled in joint replacements and sports injuries.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patient Services -->
+    <section id="services" class="services">
+        <h2>Patient Services</h2>
+        <ul>
+            <li><strong>Appointment Booking:</strong> Easy online scheduling for consultations.</li>
+            <li><strong>Health Check Packages:</strong> Comprehensive wellness packages tailored to your needs.</li>
+            <li><strong>Emergency Contact:</strong> Call 108 for immediate assistance.</li>
+        </ul>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2>Patient Testimonials</h2>
+        <div class="testimonial-carousel">
+            <div class="testimonial-card">
+                <p>"Exceptional care and compassionate staff. Highly recommend!"</p>
+                <cite>- Patient A</cite>
+            </div>
+            <div class="testimonial-card">
+                <p>"State-of-the-art facilities and expert doctors. Life-saving experience."</p>
+                <cite>- Patient B</cite>
+            </div>
+            <div class="testimonial-card">
+                <p>"Quick response in emergencies. Grateful for the team."</p>
+                <cite>- Patient C</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Address</h3>
+                <p>123 Hospital Road, Hyderabad, Telangana, India</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2023 AIG Hospital Hyderabad. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for smooth scrolling and basic interactions -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple carousel scroll hint (optional enhancement)
+        const carousel = document.querySelector('.testimonial-carousel');
+        if (carousel) {
+            carousel.addEventListener('scroll', () => {
+                // Add any scroll-based animations if needed
+            });
+        }
+    </script>
+</body>
+</html>
