@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    First Number : <input type="text" id="fno"/>
+    <br/> <br/>
+    Second Number : <input type="text" id="sno"/>
+    <br/> <br/>
+    third number : <input type="text" id="tno"/>
+     <br/> <br/>
+     forth number : <input type="text" id="fono"/>
+      <br/> <br/>
+    <input type="button" onclick="sum()" value="Sum of forth"/>
+
+    <script>
+        function sum(){
+            let a = document.getElementById("fno").value;
+            let b = document.getElementById("sno").value;
+            let c = document.getElementById("tno").value;
+            let d = document.getElementById("fono").value;
+            let sum = parseInt(a)+parseInt(b)+parseInt(c)+parseInt(d);
+            alert("sum of four is " + sum);
+        }
+    </script>
+</html>
