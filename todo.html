@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vanilla JS Todo App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 40px;
+    }
+
+    .app {
+      max-width: 400px;
+      margin: auto;
+      background: #a81313;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    input {
+      width: 70%;
+      padding: 8px;
+    }
+
+    button {
+      padding: 8px 12px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      background: #eee;
+      padding: 8px;
+      border-radius: 4px;
+    }
+
+    .actions button {
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app">
+    <h2>Todo App</h2>
+
+    <input type="text" id="todoInput" placeholder="Add a todo" />
+    <button onclick="addTodo()">Add</button>
+
+    <ul id="todoList"></ul>
+  </div>
+
+  <script>
+    let todos = JSON.parse(localStorage.getItem("todos")) || [];
+
+    function saveTodos() {
+      localStorage.setItem("todos", JSON.stringify(todos));
+    }
+
+    function renderTodos() {
+      const list = document.getElementById("todoList");
+      list.innerHTML = "";
+
+      todos.forEach((todo, index) => {
+        const li = document.createElement("li");
+
+        li.innerHTML = `
+          <span>${todo}</span>
+          <div class="actions">
+            <button onclick="editTodo(${index})">Edit</button>
+            <button onclick="deleteTodo(${index})">Delete</button>
+          </div>
+        `;
+
+        list.appendChild(li);
+      });
+    }
+
+    function addTodo() {
+      const input = document.getElementById("todoInput");
+      const value = input.value.trim();
+
+      if (value === "") return alert("Please enter a todo");
+
+      todos.push(value);
+      input.value = "";
+      saveTodos();
+      renderTodos();
+    }
+
+    function editTodo(index) {
+      const newTodo = prompt("Edit todo:", todos[index]);
+      if (newTodo !== null && newTodo.trim() !== "") {
+        todos[index] = newTodo.trim();
+        saveTodos();
+        renderTodos();
+      }
+    }
+
+    function deleteTodo(index) {
+      if (confirm("Delete this todo?")) {
+        todos.splice(index, 1);
+        saveTodos();
+        renderTodos();
+      }
+    }
+
+    renderTodos();
+  </script>
+
+</body>
+</html>
