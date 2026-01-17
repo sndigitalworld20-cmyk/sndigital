@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Indian Flag with Stand</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #eaeaea;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  /* Pole */
+  .pole {
+    width: 10px;
+    height: 500px;
+    background: #5e0303;
+    position: absolute;
+    left: -15px;
+    top: 0;
+    border-radius: 5px;
+  }
+
+  /* Flag */
+  .flag {
+    width: 360px;
+    height: 240px;
+    border: 1px solid #000;
+  }
+
+  .saffron, .white, .green {
+    height: 80px;
+    width: 100%;
+  }
+
+  .saffron {
+    background: #FF9933;
+  }
+
+  .white {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .green {
+    background: #138808;
+  }
+
+  /* Ashoka Chakra */
+  .chakra {
+    width: 60px;
+    height: 60px;
+    border: 3px solid #000080;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  .chakra::before,
+  .chakra::after {
+    content: "";
+    position: absolute;
+    background: #000080;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .chakra::before {
+    width: 2px;
+    height: 60px;
+  }
+
+  .chakra::after {
+    width: 60px;
+    height: 2px;
+  }
+
+  /* Base */
+  .base {
+    width: 120px;
+    height: 20px;
+    background: #640808;
+    margin-left: -70px;
+    margin-top: 240px;
+    border-radius: 5px;
+  }
+
+  .base-bottom {
+    width: 160px;
+    height: 25px;
+    background: #333;
+    margin-left: -90px;
+    margin-top: 5px;
+    border-radius: 6px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="pole"></div>
+
+  <div class="flag">
+    <div class="saffron"></div>
+    <div class="white">
+      <div class="chakra"></div>
+    </div>
+    <div class="green"></div>
+  </div>
+
+  <div class="base"></div>
+  <div class="base-bottom"

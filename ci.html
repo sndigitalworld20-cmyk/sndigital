@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    principle : <input type="text" id="principle"/>
+    <br/> <br/>
+    rate : <input type="text" id="rate"/>
+    <br/> <br/>
+    time : <input type="text" id="time"/>
+   <br/> <br/>
+    <input type="button" onclick="compoundIntrest()" value="compoundIntrest"/>
+
+    <script>
+        function compoundIntrest(){
+            let principle = document.getElementById("principle").value;
+            let rate = document.getElementById("rate").value;
+            let time = document.getElementById("time").value;
+            let compoundIntrest = principle* Math.pow((1 + rate/100),time);
+            alert("compoundIntrest is " + compoundIntrest);
+        }
+    </script>
+</html>

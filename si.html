@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    principle : <input type="text" id="p"/>
+    <br/> <br/>
+    rate : <input type="text" id="r"/>
+    <br/> <br/>
+    time : <input type="text" id="t"/>
+   <br/> <br/>
+    <input type="button" onclick="sI()" value="Simple intrest"/>
+
+    <script>
+        function sI(){
+            let p = document.getElementById("p").value;
+            let r = document.getElementById("r").value;
+            let t = document.getElementById("t").value;
+            let si = parseInt(p)*parseInt(r)*parseInt(t) /100;
+            alert("simple intrest is " + si);
+        }
+    </script>
+</html>
