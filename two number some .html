@@ -10,36 +10,46 @@
 <div class="calculator">
     <h2>Calculator</h2>
 
-    <input type="number" id="num1" placeholder="Enter first number">
-    <input type="number" id="num2" placeholder="Enter second number">
+    <input type="number" id="num1" placeholder="Enter First Number">
+    <input type="number" id="num2" placeholder="Enter Second Number">
 
     <div class="buttons">
-        <button onclick="add()">Add (+)</button>
-        <button onclick="subtract()">Subtract (-)</button>
+        <button onclick="add()">Add</button>
+        <button onclick="subtract()">Subtract</button>
+        <button onclick="multiply()">Multiply</button>
+        <button onclick="divide()">Divide</button>
     </div>
-    
- <button class="done" onclick="clearAll()">Done</button>
 
     <h3 id="result">Result: </h3>
 </div>
 
 <script>
     function add() {
-        let a = Number(document.getElementById("num1").value);
-        let b = Number(document.getElementById("num2").value);
-        document.getElementById("result").innerText = "Result: " + (a + b);
+        let a = Number(num1.value);
+        let b = Number(num2.value);
+        result.innerText = "Result: " + (a + b);
     }
 
     function subtract() {
-        let a = Number(document.getElementById("num1").value);
-        let b = Number(document.getElementById("num2").value);
-        document.getElementById("result").innerText = "Result: " + (a - b);
+        let a = Number(num1.value);
+        let b = Number(num2.value);
+        result.innerText = "Result: " + (a - b);
     }
 
-    function clearAll() {
-        document.getElementById("num1").value = "";
-        document.getElementById("num2").value = "";
-        document.getElementById("result").innerText = "Result:";
+    function multiply() {
+        let a = Number(num1.value);
+        let b = Number(num2.value);
+        result.innerText = "Result: " + (a * b);
+    }
+
+    function divide() {
+        let a = Number(num1.value);
+        let b = Number(num2.value);
+        if (b === 0) {
+            result.innerText = "Result: Cannot divide by 0";
+        } else {
+            result.innerText = "Result: " + (a / b);
+        }
     }
 </script>
 
