@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    First Number : <input type="text" id="fno"/>
+    <br/> <br/>
+    Second Number : <input type="text" id="sno"/>
+    <br/> <br/>
+    third number : <input type="text" id="tno"/>
+     <br/> <br/>
+     forth number : <input type="text" id="fono"/>
+      <br/> <br/>
+      fifth number : <input type="text" id="fifthno"/>
+      <br/> <br/>
+       sixth number : <input type="text" id="sixthno"/>
+      <br/> <br/>
+       seventh number : <input type="text" id="seventhno"/>
+      <br/> <br/>
+       eightth number : <input type="text" id="eightthno"/>
+      <br/> <br/>
+       ninth number : <input type="text" id="ninthno"/>
+      <br/> <br/>
+     tenth number : <input type="text" id="tenthno"/>
+      <br/> <br/>
+    <input type="button" onclick="sum()" value="Sum of tenth"/>
+
+    <script>
+        function sum(){
+            let a = document.getElementById("fno").value;
+            let b = document.getElementById("sno").value;
+            let c = document.getElementById("tno").value;
+            let d = document.getElementById("fono").value;
+            let e = document.getElementById("fifthno").value;
+            let f = document.getElementById("sixthno").value;
+            let g = document.getElementById("seventhno").value;
+            let h = document.getElementById("eightthno").value;
+            let i = document.getElementById("ninthno").value;
+            let j = document.getElementById("tenthno").value;
+            let sum = parseInt(a)+parseInt(b)+parseInt(c)+parseInt(d)+parseInt(e)+parseInt(f)
+            +parseInt(g)+parseInt(h)+parseInt(i)+parseInt(j);
+            alert("sum of tenth is " + sum);
+        }
+    </script>
+</html>
