@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <style>
+    #myDiv {
+      height: 200px;
+      width: 200px;
+      background-color: royalblue;
+      border: 2px solid blueviolet;
+      border-radius: 50%;
+      margin-bottom: 30px;
+      padding: 50px;
+      transition: 0.3s;
+    }
+
+    button {
+      padding: 8px 14px;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+  </style>
+<div id="myDiv"></div>
+
+  <button onclick="changeColor('yellow')">yello</button>
+  <button onclick="changeColor('green')">Green</button>
+  <button onclick="changeColor('Red')">Red</button>
+
+  <script>
+    function changeColor(color) {
+      document.getElementById("myDiv").style.backgroundColor = color;
+    }
+  </script>
+
+</body>
+</html>

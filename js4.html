@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        Secect Color :
+        <select onChange="setColor(this.value)">
+            <option>--Select Color--</option>
+            <option>orange</option>
+            <option>yellow</option>
+            <option>red</option>
+            </select>
+ <br/>      
+      Change color : <input type="color" onchange="setColor(this.value)">
+    </form>
+    <script>
+        function setColor(color){
+            document.body.style.backgroundColor = color;
+        }
+        </script>
+</body>
+</html>
