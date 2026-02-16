@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  <style>
+    body{
+        background-color: rgb(0, 255, 85);
+      text-align:center;
+      margin-top:100px;
+      font-size: 80px;
+    }
+ h2 {
+    color: brown;
+  }
+  </style>
+
+<h2>count button</h2>
+
+<div id="count">0</div>
+
+<button onclick="increase()">Increase</button>
+<button onclick="decrease()">Decrease</button>
+<button onclick="reset()">Reset</button>
+
+<script>
+  let count = 0;
+
+  function increase(){
+    count++;
+    document.getElementById("count").innerText = count;
+  }
+
+  function decrease(){
+    count--;
+    document.getElementById("count").innerText = count;
+  }
+
+  function reset(){
+    count = 0;
+    document.getElementById("count").innerText = count;
+  }
+</script>
+
+</body>
+</html>

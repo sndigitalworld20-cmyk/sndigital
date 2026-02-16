@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Wall Clock with Stop</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #111;
+            color: white;
+            font-family: Arial;
+        }
+
+        .clock {
+            width: 280px;
+            height: 280px;
+            border: 8px solid white;
+            border-radius: 50%;
+            position: relative;
+            background: black;
+            margin-bottom: 20px;
+        }
+
+        .hand {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform-origin: bottom;
+            transform: translateX(-50%) rotate(0deg);
+        }
+
+        .hour {
+            width: 6px;
+            height: 60px;
+            background: white;
+        }
+
+        .minute {
+            width: 4px;
+            height: 90px;
+            background: white;
+        }
+
+        .second {
+            width: 2px;
+            height: 110px;
+            background: red;
+        }
+
+        .center-dot {
+            width: 12px;
+            height: 12px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .start {
+            background: green;
+            color: white;
+        }
+
+        .stop {
+            background: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="clock">
+        <div class="hand hour" id="hour"></div>
+        <div class="hand minute" id="minute"></div>
+        <div class="hand second" id="second"></div>
+        <div class="center-dot"></div>
+    </div>
+
+    <div>
+        <button class="start" onclick="startClock()">Start</button>
+        <button class="stop" onclick="stopClock()">Stop</button>
+    </div>
+
+    <script>
+        let timer; 
+
+        function updateClock() {
+            const now = new Date();
+
+            const hours = now.getHours() % 12;
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+
+            const hourDeg = (hours * 30) + (minutes * 0.5);
+            const minuteDeg = minutes * 6;
+            const secondDeg = seconds * 6;
+
+            document.getElementById("hour").style.transform =
+                `translateX(-50%) rotate(${hourDeg}deg)`;
+
+            document.getElementById("minute").style.transform =
+                `translateX(-50%) rotate(${minuteDeg}deg)`;
+
+            document.getElementById("second").style.transform =
+                `translateX(-50%) rotate(${secondDeg}deg)`;
+        }
+
+        function startClock() {
+            if (!timer) {
+                updateClock();
+                timer = setInterval(updateClock, 1000);
+            }
+        }
+
+        function stopClock() {
+            clearInterval(timer);
+            timer = null;
+        }
+
+        startClock();
+    </script>
+
+</body>
+
+</html>
